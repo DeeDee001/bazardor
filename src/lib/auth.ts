@@ -1,21 +1,27 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { MongoClient } from "mongodb";
+import { normalizeMongoUri } from "./mongo-helper";
 
-const uri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/bazardor";
-const client = new MongoClient(uri);
+const uri = normalizeMongoUri(process.env.MONGODB_URI);
+const client = new MongoClient(uri, {
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 8000,
+});
 const db = client.db();
 
 const getAuthBaseUrl = () => {
-  if (process.env.BETTER_AUTH_URL) return process.env.BETTER_AUTH_URL;
-  if (process.env.NEXT_PUBLIC_APP_URL) return process.env.NEXT_PUBLIC_APP_URL;
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  let url = "http://localhost:3000";
+  if (process.env.BETTER_AUTH_URL) {
+    url = process.env.BETTER_AUTH_URL;
+  } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    url = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  } else if (process.env.VERCEL_URL) {
+    url = `https://${process.env.VERCEL_URL}`;
+  } else if (process.env.NEXT_PUBLIC_APP_URL) {
+    url = process.env.NEXT_PUBLIC_APP_URL;
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  return "http://localhost:3000";
+  return url.replace(/\/+$/, "");
 };
 
 export const auth = betterAuth({
