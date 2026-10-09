@@ -25,6 +25,20 @@ export const metadata: Metadata = {
     "daily market price",
     "নিত্যপণ্য",
   ],
+  openGraph: {
+    title: "বাজার দর (BazarDor) — নিত্যপ্রয়োজনীয় পণ্যের বাজার দর এক নজরে",
+    description:
+      "প্রতিদিনের পাইকারি ও খুচরা বাজার দর পর্যবেক্ষণ ও তুলনামূলক বিশ্লেষণ।",
+    url: "https://bazardor-jet.vercel.app",
+    siteName: "বাজার দর",
+    locale: "bn_BD",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "বাজার দর (BazarDor)",
+    description: "নিত্যপ্রয়োজনীয় পণ্যের সঠিক বাজার দর এক নজরে।",
+  },
 };
 
 export default function RootLayout({
