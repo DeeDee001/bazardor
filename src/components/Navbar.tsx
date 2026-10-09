@@ -97,6 +97,7 @@ export default function Navbar() {
                     src={user.image || "/default-avatar.png"}
                     alt={user.name || "ব্যবহারকারী"}
                     fill
+                    unoptimized={!!user.image}
                     className="object-cover"
                   />
                 </div>
