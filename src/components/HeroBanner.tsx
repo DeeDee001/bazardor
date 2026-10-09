@@ -81,6 +81,7 @@ export default function HeroBanner() {
                 alt="বাজার দর গ্রোসারি বাস্কেট"
                 fill
                 priority
+                sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
                 className="object-contain drop-shadow-xl transition-transform hover:scale-105 duration-300"
               />
             </div>
