@@ -27,8 +27,9 @@ export function toBengaliDigits(input: number | string | undefined | null): stri
  * Example: 148 -> "১৪৮ টাকা"
  */
 export function formatPrice(price: number | undefined | null): string {
-  if (price === undefined || price === null) return "০ টাকা";
-  const formattedWithCommas = price.toLocaleString("en-US");
+  if (price === undefined || price === null || isNaN(Number(price))) return "০ টাকা";
+  const num = Math.round(Number(price));
+  const formattedWithCommas = num.toLocaleString("en-US");
   return `${toBengaliDigits(formattedWithCommas)} টাকা`;
 }
 
