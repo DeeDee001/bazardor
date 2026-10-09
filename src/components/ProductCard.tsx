@@ -19,7 +19,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-200 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-900/5"
+      aria-label={`${product.nameBn} এর বিস্তারিত বাজার দর দেখুন`}
+      className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-2xs transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-900/10"
     >
       {/* Top Header: Icon & Category Tag */}
       <div>
