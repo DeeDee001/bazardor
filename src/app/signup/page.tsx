@@ -68,12 +68,22 @@ function SignUpContent() {
   const handleSocialSignUp = async (provider: "google" | "github") => {
     setSocialLoading(provider);
     try {
-      await signIn.social({
+      const res = await signIn.social({
         provider,
         callbackURL: callbackUrl,
       });
-    } catch {
-      toast.error(`${provider} দিয়ে নিবন্ধন করতে সমস্যা হয়েছে।`);
+      if (res?.error) {
+        toast.error(
+          res.error.message || `${provider} দিয়ে সাইন ইন করতে সমস্যা হয়েছে।`
+        );
+        setSocialLoading(null);
+      }
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : `${provider} দিয়ে সাইন ইন করতে সমস্যা হয়েছে।`;
+      toast.error(message);
       setSocialLoading(null);
     }
   };
