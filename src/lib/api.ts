@@ -14,7 +14,7 @@ async function fetchWithFallback<T>(endpoint: string): Promise<T> {
 
   try {
     const res = await fetch(`${PRIMARY_BASE_URL}${cleanEndpoint}`, {
-      next: { revalidate: 60 },
+      next: { revalidate: 60, tags: ["products"] },
       headers: { "Content-Type": "application/json" },
     });
     if (!res.ok) {
