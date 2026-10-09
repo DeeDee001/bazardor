@@ -29,6 +29,9 @@ export default function SortDropdown({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label="পণ্য সাজানোর অপশন নির্বাচন করুন"
         className="inline-flex items-center space-x-2 rounded-xl border border-slate-300 bg-white px-3.5 py-2 text-xs sm:text-sm font-medium text-slate-700 shadow-2xs transition-colors hover:border-emerald-500 hover:bg-slate-50 focus:outline-hidden"
       >
         <ArrowUpDown className="h-4 w-4 text-emerald-600" />
