@@ -1,121 +1,122 @@
-# 🛒 বাজার দর (BazarDor) — প্রতিদিনের সঠিক বাজার দর
+# 🛒 BazarDor (বাজার দর) — Daily Commodity Price Tracker
 
-একটি আধুনিক, রেসপন্সিভ এবং ফুল-স্ট্যাক ওয়েব অ্যাপ্লিকেশন যা বাংলাদেশের বিভিন্ন পাইকারি ও খুচরা বাজারের নিত্যপ্রয়োজনীয় পণ্যসামগ্রীর রিয়েল-টাইম দর, মূল্যবৃদ্ধির হালনাগাদ ও তুলনামূলক বাজার বিশ্লেষণ প্রদান করে।
-
----
-
-## 📌 প্রকল্পের সংক্ষিপ্ত বিবরণ (Project Overview)
-
-**বাজার দর (BazarDor)** সাধারণ ক্রেতা, ব্যবসায়ী এবং বাজার পর্যবেক্ষকদের সুবিধার্থে তৈরি করা হয়েছে। এর মাধ্যমে ব্যবহারকারীরা চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম-দুধ এবং মসলার মতো প্রয়োজনীয় খাদ্যপণ্যের দৈনিক বাজার দর পর্যবেক্ষণ করতে পারেন।
-
-- **লাইভ ডেমো / Vercel লিঙ্ক:** [https://bazardor-jet.vercel.app](https://bazardor-jet.vercel.app)
-- **API মিরর সাপোর্ট:** ক্লাউডফ্লেয়ার ওয়ার্কার্স এপিআই (Primary & Fallback)
+**BazarDor** is a modern, responsive, and full-stack web application designed to help consumers, merchants, and market observers in Bangladesh track daily essential commodity prices. It offers real-time price updates, daily inflation/deflation insights, regional market breakdowns, and secure personalized profiles.
 
 ---
 
-## 🛠️ ব্যবহৃত প্রযুক্তিসমূহ (Technologies Used)
+## 🌐 Project Links
 
-| প্রযুক্তি | ব্যবহার ও উদ্দেশ্য |
-| :--- | :--- |
-| **Next.js 16 (App Router)** | আধুনিক ফুল-স্ট্যাক ফ্রেমওয়ার্ক, SSR, SSG এবং ডায়নামিক রাউটিং |
-| **React 19** | আধুনিক কম্পোনেন্ট আর্কিটেকচার, হুক্স এবং স্টেট ম্যানেজমেন্ট |
-| **TypeScript** | টাইপ সেফটি ও নির্ভরযোগ্য কোডবেস |
-| **Tailwind CSS v4 + DaisyUI** | আধুনিক রেসপন্সিভ ডিজাইন, থিমিং ও নান্দনিক ইউজার ইন্টারফেস |
-| **BetterAuth** | মডার্ন অথেনটিকেশন (ইমেইল/পাসওয়ার্ড, গুগল ও গিটহাব সোশ্যাল লগইন) |
-| **MongoDB** | ব্যবহারকারীর অ্যাকাউন্ট এবং সেশন সংরক্ষণের জন্য ডাটাবেস অ্যাডাপ্টার |
-| **React Hot Toast** | ব্যবহারকারী-বান্ধব ইন্টারেক্টিভ নোটিফিকেশন সিস্টেম |
-| **Lucide React** | আধুনিক ও ক্লিন ভেক্টর আইকন সমূহ |
+- **Live Deployment (Vercel):** [https://bazardor-jet.vercel.app](https://bazardor-jet.vercel.app)
+- **Localhost URL:** [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## ✨ প্রধান ৫টি বৈশিষ্ট্য (Key Features)
+## 📖 Description
 
-### ১. 🔝 রিয়েল-টাইম প্রাইস টিকার ও ক্যাটাগরি ভিত্তিক নেভিগেশন (Price Ticker & Category Bar)
-- ব্যানারের ঠিক উপরে ইনফিনিট স্ক্রোলিং প্রাইস টিকার যা পণ্যের নাম, আজকের দাম এবং মূল্য পরিবর্তনের হার (▲/▼) প্রদর্শন করে।
-- বাংলা তারিখ এবং ৮টি প্রধান ক্যাটাগরি (চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম-দুধ, মসলা) ব্রাউজ করার সুবিধা।
-
-### ২. ⚖️ দৈনিক শীর্ষ মূল্যবৃদ্ধি ও দরপতন সেকশন (Top Risers & Fallers)
-- **আজ দাম বেড়েছে ▲:** গতকালের তুলনায় সর্বাধিক দর বৃদ্ধি পাওয়া শীর্ষ ৬টি পণ্য।
-- **আজ দাম কমেছে ▼:** সাশ্রয়ী মূল্যে কেনার উপযোগী শীর্ষ দরপতন ঘটা ৬টি পণ্য।
-- কার্ডসমূহে বাংলা সংখ্যায় দাম (যেমন: ১৪৮ টাকা, ১,৮৫০ টাকা) এবং কালার-কোডেড ব্যাজ।
-
-### ৩. 🔒 সুরক্ষিত পণ্য বিস্তারিত পেজ ও বাজারভিত্তিক বিশ্লেষণ (Protected Product Details Page)
-- `/product/[slug]` রাউটটি শুধুমাত্র অথেনটিকেটেড ব্যবহারকারীদের জন্য উন্মুক্ত।
-- সর্বনিম্ন দাম, সর্বোচ্চ দাম ও জাতীয় গড় দরের আলাদা মেট্রিক কার্ড।
-- **বাজারভিত্তিক আজকের দাম:** ঢাকা, চট্টগ্রাম, রাজশাহী, খুলনা, সিলেট ও ময়মনসিংহের বাজার ভিত্তিক তুলনামূলক টেবিল এবং সার্চ ফিল্টার।
-
-### ৪. 🔀 সংখ্যাতাত্ত্বিক সাজানো এবং অনুসন্ধান ব্যবস্থা (Smart Numeric Sorting & Search - C1)
-- ক্যাটাগরি পেজে `সাজান: ডিফল্ট | দাম: কম থেকে বেশি | দাম: বেশি থেকে কম` সুবিধা।
-- স্ট্রিং এর বদলে বিশুদ্ধ নিউমেরিক ভ্যালুর ওপর ভিত্তি করে সঠিক বাছাইকরণ।
-- কাস্টম স্কেলিটন লোডার এবং অনুপস্থিত ক্যাটাগরির জন্য পরিচ্ছন্ন এম্পটি স্টেট।
-
-### ৫. 👤 প্রোফাইল ম্যানেজমেন্ট ও তথ্য পরিবর্তন ফিচার (Profile & Update Information - C3)
-- BetterAuth এর মাধ্যমে নিরাপদ প্রোফাইল পেজ (`/profile`)।
-- `/profile/edit` রাউটে গিয়ে ব্যবহারকারীর নাম পরিবর্তনের সম্পূর্ণ কার্যকরী ফর্ম।
+In today's fast-moving market, everyday food and grocery prices fluctuate constantly. **BazarDor** bridges the information gap by providing transparent, up-to-date market rates across all major divisions in Bangladesh. Built with Next.js 16 App Router, React 19, and Better Auth with MongoDB, the application delivers a seamless experience with localized Bengali number and date formatting, protected member routes, and interactive price comparisons.
 
 ---
 
-## 📚 অর্জিত গুরুত্বপূর্ণ ধারণাসমূহ (Key Concepts Learned)
+## 🛠️ Technologies Used
 
-1. **Next.js App Router & Layouts:** রুট লেআউট, গ্রুপ রাউট এবং মেটাডাটা ম্যানেজমেন্ট।
-2. **Server vs Client Components:** পারফরম্যান্স অপ্টিমাইজেশন ও ইন্টারঅ্যাক্টিভিটির সঠিক সংমিশ্রণ।
-3. **Data Fetching & Resilient Fallback:** ক্লাউডফ্লেয়ার প্রাইমারি ও সেকেন্ডারি মিরর এপিআই থেকে নিরাপদ ডাটা ফেচিং।
-4. **Dynamic Routing:** `[slug]` ডায়নামিক প্যারামিটার হ্যান্ডলিং এবং এরর প্রতিরোধ।
-5. **State Management & Custom Hooks:** `useState`, `useEffect`, `useMemo` এবং `useSession` এর সঠিক ব্যবহার।
-6. **Authentication & Protected Routes:** BetterAuth দিয়ে সেশন ভেরিফিকেশন এবং টোস্ট নোটিফিকেশন সহ রিডাইরেক্ট।
-7. **Array Methods:** `.filter()`, `.map()`, `.sort()`, `.slice()`, `.reduce()` এর বাস্তব প্রয়োগ।
-8. **Bengali Locale Formatting:** ইংরেজি সংখ্যা থেকে বাংলা সংখ্যা রূপান্তর (`০-৯`) এবং বাংলা ক্যালেন্ডার ডেট ফরম্যাটিং।
+- **Framework:** Next.js 16 (App Router)
+- **Library:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4, DaisyUI
+- **Authentication:** Better Auth (Email/Password, Google OAuth, GitHub OAuth)
+- **Database:** MongoDB (Native Driver & Better Auth Adapter)
+- **Icons & Notifications:** Lucide React, React Hot Toast
+- **Deployment & Hosting:** Vercel
 
 ---
 
-## 🚀 লোকাল সেটআপ এবং রান নির্দেশিকা (Local Setup)
+## ✨ Key Features (Minimum 5)
 
-### ১. ক্লোন ও ডিপেন্ডেন্সি ইনস্টলেশন
+### 1. 📈 Real-Time Price Ticker & Category Navigation
+- Features an infinite scrolling marquee ticker displaying commodity names, current rates, and live price movements (▲ / ▼).
+- Quick category bar with Bengali date integration to browse through 8 essential food groups: Rice, Lentils, Oil, Vegetables, Fish, Meat, Eggs & Milk, and Spices.
+
+### 2. ⚖️ Daily Top Risers & Fallers (আজ দাম বেড়েছে / কমেছে)
+- **Top Risers (আজ দাম বেড়েছে):** Spotlights products with the highest price increases compared to yesterday.
+- **Top Fallers (আজ দাম কমেছে):** Displays budget-friendly items with maximum price drops.
+- Clean presentation with color-coded badges, percentage indicators, and formatted Bengali numerals (e.g., ১৪৮ টাকা).
+
+### 3. 🔒 Protected Product Details & Division-Wise Comparison
+- Secure `/product/[slug]` route accessible exclusively to authenticated users.
+- Highlights essential metrics including lowest price, highest price, and national average rate.
+- Interactive table comparing regional prices across Dhaka, Chittagong, Rajshahi, Khulna, Sylhet, and Mymensingh with instant search filtering.
+
+### 4. 🔀 Smart Numeric Sorting & Category Filtering
+- Dynamic category pages with intelligent sorting:
+  - **ডিফল্ট (Default)**
+  - **দাম: কম থেকে বেশি (Price: Low to High)**
+  - **দাম: বেশি থেকে কম (Price: High to Low)**
+- Pure numeric sorting logic preventing string-based order discrepancies, paired with responsive skeleton loaders and empty states.
+
+### 5. 👤 User Authentication & Profile Management
+- Powered by Better Auth with session management and route protection.
+- Secure user profile dashboard at `/profile` showcasing user details, join date, and avatar.
+- Functional profile editing route at `/profile/edit` allowing users to update their display name with instant toast feedback.
+
+### 6. 🔑 Multi-Provider OAuth Sign-In
+- Supports seamless one-click sign-in with **Google** and **GitHub** alongside standard Email & Password registration.
+- Includes automatic account linking for hassle-free login across multiple providers.
+
+---
+
+## 🚀 How to Run the Project Locally
+
+Follow these quick steps to set up and run **BazarDor** on your local machine:
+
+### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/DeeDee001/bazardor.git
 cd bazardor
+```
+
+### 2. Install Dependencies
+```bash
 npm install
 ```
 
-### ২. এনভায়রনমেন্ট ভ্যারিয়েবল কনফিগারেশন
-`.env.example` ফাইলটি কপি করে `.env.local` তৈরি করুন:
+### 3. Configure Environment Variables
+Create a `.env.local` file in the root directory:
 ```bash
 cp .env.example .env.local
 ```
-নিম্নলিখিত ভ্যারিয়েবলগুলো প্রদান করুন:
+*(Or create a new `.env.local` file)* and add the following configuration:
+
 ```env
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/bazardor?retryWrites=true&w=majority
-BETTER_AUTH_SECRET=your_random_secure_32_char_secret_key
+# MongoDB Connection
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/bazardor?retryWrites=true&w=majority
+
+# Better Auth Configuration
+BETTER_AUTH_SECRET=your_32_character_secret_key
 BETTER_AUTH_URL=http://localhost:3000
 NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# API Data Source
 NEXT_PUBLIC_API_URL=https://api.api-store.workers.dev/api/bazardor
 
-# ঐচ্ছিক (সোশ্যাল লগইনের জন্য)
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
+# Social OAuth (Optional for local testing)
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
-### ৩. ডেভেলপমেন্ট সার্ভার চালু
+### 4. Start the Development Server
 ```bash
 npm run dev
 ```
-ব্রাউজারে [http://localhost:3000](http://localhost:3000) এ প্রবেশ করুন।
+
+### 5. Access the Project
+Open your browser and navigate to:
+👉 **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 🌐 ভার্সেলে ডিপ্লয়মেন্ট গাইড (Vercel Deployment)
+## 🌐 Production Deployment
 
-1. গিটহাবে আপনার রিপোজিটরি পুশ করুন (`git push origin main`)।
-2. [Vercel Dashboard](https://vercel.com)-এ গিয়ে **Add New Project** সিলেক্ট করুন।
-3. আপনার গিটহাব রিপোজিটরি ইমপোর্ট করুন।
-4. **Environment Variables** সেকশনে `.env.local`-এর সকল ভ্যারিয়েবল যুক্ত করুন:
-   - `MONGODB_URI`
-   - `BETTER_AUTH_SECRET`
-   - `BETTER_AUTH_URL` (আপনার Vercel ডোমেইন যেমন: `https://your-app.vercel.app`)
-   - `NEXT_PUBLIC_APP_URL` (`https://your-app.vercel.app`)
-   - `NEXT_PUBLIC_API_URL` (`https://api.api-store.workers.dev/api/bazardor`)
-   - `GOOGLE_CLIENT_ID` ও `GOOGLE_CLIENT_SECRET` (প্রযোজ্য ক্ষেত্রে)
-   - `GITHUB_CLIENT_ID` ও `GITHUB_CLIENT_SECRET` (প্রযোজ্য ক্ষেত্রে)
-5. **Deploy** বাটনে ক্লিক করুন।
+- **Vercel Live URL:** [https://bazardor-jet.vercel.app](https://bazardor-jet.vercel.app)
+- When deploying to Vercel, ensure that `BETTER_AUTH_URL` and `NEXT_PUBLIC_APP_URL` are set to your production Vercel domain (`https://bazardor-jet.vercel.app`) in the Vercel Project Settings.
